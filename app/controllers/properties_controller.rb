@@ -6,12 +6,12 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @nearest_stations = @property.nearest_stations
+    # @nearest_stations = @property.nearest_stations
   end
 
   def new
     @property = Property.new
-    2.times { @property.nearest_stations.build }
+    # 2.times { @property.nearest_stations.build }
   end
 
   def edit
@@ -19,11 +19,11 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
-    if @property.save
-      redirect_to properties_path, notice: "物件を登録しました！"
-    else
-      render :new
-    end
+    # if @property.save
+      # redirect_to properties_path, notice: "物件を登録しました！"
+    # else
+    #   render :new
+    # end
 
     respond_to do |format|
       if @property.save
