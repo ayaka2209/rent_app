@@ -37,8 +37,24 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    
   </div>
+
+  <%= form.fields_for :nearest_stations do | nearest_station | %>
+    <div class="field">
+      <%= form.label :路線名 %>
+      <%= form.text_field :route %>
+    </div>
+
+    <div class="field">
+      <%= form.label :駅名 %>
+      <%= form.text_field :station_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :徒歩分数 %>
+      <%= form.number_field :walk %> 分
+    </div>
+  <% end %>
+  <%= form.submit %>
 <% end %>
-
-
